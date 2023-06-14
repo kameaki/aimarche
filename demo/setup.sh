@@ -10,6 +10,9 @@ else
     npm install -g yarn
 fi
 
+#gitのアクセスがうまくいかない時があるため
+git config --global url.https://github.com/.insteadOf git://github.com/
+
 #package.jsonに記録されているパッケージをインストール
 yarn install
 (cd client && yarn install)
