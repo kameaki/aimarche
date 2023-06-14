@@ -12,8 +12,12 @@ fi
 
 #gitのアクセスがうまくいかない時があるため
 git config --global url.https://github.com/.insteadOf git://github.com/
+git config --global url.https://github.com/.insteadOf ssh://git@github.com/
+
+npm install lib/canvas-v2.6.1-node-v88-linux-glibc-x64.tar.gz
 
 #package.jsonに記録されているパッケージをインストール
+#canvasがインストールできないので、tar.gzから
 yarn install
 (cd client && yarn install)
 
