@@ -1,0 +1,37 @@
+{
+  "name": "decai-demo",
+  "version": "1.4.5",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "blockchain": "mkdir --parents blockchain_db && ganache-cli --db blockchain_db --networkId 5782 --chainId 0xDeCA10B --gasLimit 9000000 --gasPrice 1 --host 0.0.0.0 --port ${PORT:-7545} --mnemonic \"net pistol fun vibrant sausage vintage general silk weekend street brave rubber\"",
+    "clean": "rm -rf blockchain_db db.sqlite client/src/contracts/compiled/*.json",
+    "client": "cd client && yarn start",
+    "prod-client": "cd client && yarn start-prod",
+    "lint": "bash scripts/custom_lint.sh",
+    "lint-fix": "bash scripts/custom_lint.sh --fix",
+    "server": "nodemon server.js --ignore client/",
+    "start-prod-back-end": "node server.js",
+    "test": "cd client && yarn test",
+    "build-all": "npm-run-all -p server"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.17.3",
+    "ganache-cli": "^6.12.1",
+    "npm-run-all": "^4.1.5",
+    "sql.js": "^1.1.0",
+    "typescript": "^4.3.5"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.28.1",
+    "@typescript-eslint/parser": "^4.28.1",
+    "eslint": "^6.6.0",
+    "eslint-plugin-react": "^7.24.0",
+    "ethlint": "^1.2.5",
+    "nodemon": "^2.0.2"
+  }
+}
