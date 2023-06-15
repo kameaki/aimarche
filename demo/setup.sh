@@ -14,8 +14,7 @@ fi
 git config --global url.https://github.com/.insteadOf git://github.com/
 
 #package.jsonに記録されているパッケージをインストール
-#canvasがインストールできないので、tar.gzから
 yarn install
-(cd client && yarn install)
+(cd client && yarn add nan@latest &&yarn install)
 
 ./setup_libs.sh
