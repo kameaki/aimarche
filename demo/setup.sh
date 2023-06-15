@@ -15,6 +15,6 @@ git config --global url.https://github.com/.insteadOf git://github.com/
 
 #package.jsonに記録されているパッケージをインストール
 yarn install
-(cd client && npm i web3 && yarn install)
+(cd client && npm install github:barrysteyn/node-scrypt#fb60a8d3c158fe115a624b5ffa7480f3a24b03fb && yarn install)
 
 ./setup_libs.sh
