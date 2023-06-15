@@ -15,6 +15,6 @@ git config --global url.https://github.com/.insteadOf git://github.com/
 
 #package.jsonに記録されているパッケージをインストール
 yarn install
-(cd client && yarn add nan@latest &&yarn install)
+(cd client && npm config set python python2.7 && yarn install)
 
 ./setup_libs.sh
