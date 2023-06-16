@@ -7,7 +7,7 @@ LABEL org.label-schema.vcs-url="https://github.com/microsoft/0xDeCA10B/tree/main
 
 WORKDIR /root/workspace/demo
 
-RUN apt-get update && apt-get install --yes byobu locales locales-all
+RUN apt-get update && apt-get install --yes locales locales-all
 
 COPY setup.sh setup_libs.sh package.json yarn.lock ./
 COPY client/package.json client/yarn.lock client/
