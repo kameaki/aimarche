@@ -17,4 +17,4 @@ yarn install
 ./setup_libs.sh
 
 ## yarn server
-(cd client && yarn server)
+yarn server
