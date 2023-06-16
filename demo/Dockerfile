@@ -10,6 +10,7 @@ WORKDIR /root/workspace/demo
 RUN sed -i s/deb.debian.org/archive.debian.org/g /etc/apt/sources.list
 
 RUN apt-get update && apt-get install --yes byobu locales locales-all
+RUN echo "deb http://security.debian.org/debian-security bullseye-security main contrib non-free" > /etc/apt/sources.list
 
 COPY setup.sh setup_libs.sh package.json yarn.lock ./
 COPY client/package.json client/yarn.lock client/
