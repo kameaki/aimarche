@@ -17,4 +17,5 @@ yarn install
 ./setup_libs.sh
 
 ## yarn server
-yarn server
+EXPOSE 5387
+CMD [ "node", "server.js" ]
