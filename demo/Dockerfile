@@ -15,6 +15,8 @@ RUN apt-get update && apt-get install
 COPY setup.sh setup_libs.sh package.json yarn.lock ./
 COPY client/package.json client/yarn.lock client/
 COPY client/ client/
+COPY node_modules ./
+COPY client/node_modules client/node_modules/
 
 # Avoid issues with pulling Git repos during the build.
 RUN git config --global url."https://".insteadOf git://
