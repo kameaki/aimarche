@@ -19,4 +19,4 @@ COPY client/package.json client/yarn.lock client/
 RUN git config --global url."https://".insteadOf git://
 RUN bash setup.sh
 
-ENTRYPOINT [ "yarn", "server" ]
+ENTRYPOINT [ "yarn", "client" ]
