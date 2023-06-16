@@ -1,0 +1,33 @@
+version: "3"
+services:
+  ganache:
+    image: trufflesuite/ganache-cli
+    container_name: ganache
+    ports:
+      - 8545:8545
+    command: ["--gasLimit", "9000000", "--gasPrice", "1"]
+    networks:
+      external:
+        ipv4_address: 172.16.0.2
+
+  app:
+    image: node:latest
+    container_name: app
+    volumes:
+      - ./api:/work/api
+      - ./front:/work/front
+      - ./smart-contracts:/work/smart-contracts
+    working_dir: /work/front
+    ports:
+      - 5387:5387
+      - 8080:8080
+    networks:
+      external:
+        ipv4_address: 172.16.0.3
+    tty: true
+
+networks:
+  external:
+    ipam:
+      config:
+        - subnet: 172.16.0.0/24

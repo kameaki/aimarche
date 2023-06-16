@@ -1,0 +1,11 @@
+{
+  "name": "smart_contracts",
+  "proxy": "http://localhost:5387/",
+  "scripts": {
+    "blockchain": "rm src/contracts/compiled/* && truffle compile && truffle migrate"
+  },
+  "dependencies": {
+    "dotenv": "^16.1.4",
+    "truffle": "^5.9.4"
+  }
+}
