@@ -18,3 +18,6 @@ COPY client/package.json client/yarn.lock client/
 # Avoid issues with pulling Git repos during the build.
 RUN git config --global url."https://".insteadOf git://
 RUN bash setup.sh
+
+EXPOSE 5387
+CMD [ "node", "server.js" ]
